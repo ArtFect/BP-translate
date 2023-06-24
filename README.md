@@ -4,11 +4,9 @@ Partial translator for the Japanese Blue Protocol server. It only translates str
  
 <img src="https://i.imgur.com/PwC50La.png" alt= “” width="328" height="341">
 
-(In the screenshot, SkyProc was also used to translate the interface)
+(In this screenshot, SkyProc was also used to translate the interface)
 
 So far the translation is only done with Google Translate, but maybe later there will be a manual translation if there are volunteers
-
-[Project Discord](https://discord.gg/YhKkzdduC)
 
 Program doesn't change game files, doesn't interact with the game memory, doesn't do dll injection
 
@@ -24,5 +22,6 @@ Then it creates a server at localhost that proxies all requests to the real serv
 2. Run BP-translate.exe
 3. Run the game
 
-
 BP-translate will close automatically after the localisation file has been issued
+
+[Project Discord](https://discord.gg/YhKkzdduC)
