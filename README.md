@@ -2,7 +2,7 @@
 
 Partial translator for the Japanese Blue Protocol server. It only translates strings that are downloaded from the api (quests, items, mobs...)
  
-<img src="https://i.imgur.com/FKgd7jP.png" alt= “” width="960" height="540">
+<img src="https://i.imgur.com/PwC50La.png" alt= “” width="328" height="341">
 
 (In the screenshot, SkyProc was also used to translate the interface)
 
