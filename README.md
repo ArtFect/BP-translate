@@ -1,8 +1,12 @@
 # BP-translate
 
-Partial translator for the Japanese Blue Protocol server. It only translates strings that are downloaded from the api (quests, items, mobs...). 
+Partial translator for the Japanese Blue Protocol server. It only translates strings that are downloaded from the api (quests, items, mobs...)
+ 
+<img src="https://i.imgur.com/FKgd7jP.png" alt= “” width="960" height="540">
 
-So far the translation is only done with Google Translate, but maybe later there will be a manual translation if there are volunteers. 
+(In the screenshot, SkyProc was also used to translate the interface)
+
+So far the translation is only done with Google Translate, but maybe later there will be a manual translation if there are volunteers
 
 [Project Discord](https://discord.gg/YhKkzdduC)
 
