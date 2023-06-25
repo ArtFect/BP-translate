@@ -5,7 +5,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -78,7 +77,7 @@ namespace BPtranslate {
         }
 
         public static int Main(string[] args) {
-            if (!File.ReadAllLines(hostsFile).Contains(redirectEntry)) {
+            if (!File.ReadAllText(hostsFile).Contains(redirectEntry)) {
                 UpdateMasterDataRealIp();
                 AddRedirectToHosts();
             } else {
@@ -102,11 +101,21 @@ namespace BPtranslate {
         }
 
         static void AddRedirectToHosts() {
-            File.AppendAllLines(hostsFile, new string[] { redirectEntry });
+            //Check if the file already ends with a new line or we need to add it
+            bool addNewLine = true;
+            using (FileStream fs = new FileStream(hostsFile, FileMode.Open))
+            using (BinaryReader rd = new BinaryReader(fs)) {
+                fs.Position = fs.Length - 1;
+                int last = rd.Read();
+                if (last == 10) addNewLine = false;
+            }
+
+            string toAppend = (addNewLine ? Environment.NewLine + redirectEntry : redirectEntry);
+            File.AppendAllText(hostsFile, toAppend);
         }
 
         static void RemoveRedirectFromHosts() {
-            File.WriteAllLines(hostsFile, File.ReadAllLines(hostsFile).Where(l => !l.Equals(redirectEntry)));
+            File.WriteAllText(hostsFile, File.ReadAllText(hostsFile).Replace(redirectEntry, ""));
         }
 
         static void RemoveCertificate() {
