@@ -24,4 +24,4 @@ Then it creates a server at localhost that proxies all requests to the real serv
 
 BP-translate will close automatically after the localisation file has been issued
 
-[Project Discord](https://discord.gg/YhKkzdduC)
+[You can help with traslation in this discord](https://discord.gg/nVfDBy97aK) 
