@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace BPtranslate {
     public sealed class Program {
-        static X509Certificate2 serverCertificate = new X509Certificate2("bpmasterdata.pfx");
+        static X509Certificate2 serverCertificate = new X509Certificate2(Path.Combine(Directory.GetCurrentDirectory(), "bpmasterdata.pfx"));
         static string masterDataIp;
         static string hostsFile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "system32/drivers/etc/hosts");
 
@@ -58,7 +58,7 @@ namespace BPtranslate {
                         string firstLine = reqLines[0];
 
                         if (firstLine.StartsWith("GET /apiext/texts/ja_JP")) {
-                            string[] loc = File.ReadAllLines("loc.file");
+                            string[] loc = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "loc.file"));
                             string response = "HTTP/1.1 200 OK\r\nx-amz-meta-x-sb-iv: AAAAAAAAAAAAAAAAAAAAAA==\r\nx-amz-meta-x-sb-rawdatasize: " + loc[0] + "\r\nContent-Type: text/plain\r\nContent-Length: " + loc[1].Length + "\r\nConnection: keep-alive\r\n\r\n" + loc[1];
                             src.Write(Encoding.ASCII.GetBytes(response));
 
