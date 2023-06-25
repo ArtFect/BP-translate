@@ -58,8 +58,8 @@ namespace BPtranslate {
                         string firstLine = reqLines[0];
 
                         if (firstLine.StartsWith("GET /apiext/texts/ja_JP")) {
-                            string[] loc = File.ReadAllLines(Path.Combine(Directory.GetCurrentDirectory(), "loc.file"));
-                            string response = "HTTP/1.1 200 OK\r\nx-amz-meta-x-sb-iv: AAAAAAAAAAAAAAAAAAAAAA==\r\nx-amz-meta-x-sb-rawdatasize: " + loc[0] + "\r\nContent-Type: text/plain\r\nContent-Length: " + loc[1].Length + "\r\nConnection: keep-alive\r\n\r\n" + loc[1];
+                            string loc = File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), "loc.json"));
+                            string response = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: " + loc.Length + "\r\nConnection: keep-alive\r\n\r\n" + loc;
                             src.Write(Encoding.ASCII.GetBytes(response));
 
                             Console.WriteLine("Translation sent, the program will close in 5 seconds");
