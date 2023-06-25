@@ -18,7 +18,7 @@ Then it creates a server at localhost that proxies all requests to the real serv
 
 ## How to use it?
 
-1. Download the program archive from [releases](https://github.com/ArtFect/BP-translate/releases) and unzip it
+1. Download bp-translate.zip from [releases](https://github.com/ArtFect/BP-translate/releases) and unzip it
 2. Run BP-translate.exe
 3. Run the game
 
