@@ -26,6 +26,6 @@ BP-translate will close automatically after the localisation file has been issue
 
 ## Known issue
 
-If you kill a program via Task Manager or otherwise, you may have an endless load when starting the game.  
-To fix this, run the program again and close normally via X.  
-Or go to `C:/Windows/System32/drivers/etc/hosts` file and remove this line `127.0.0.1 masterdata-main.aws.blue-protocol.com`
+If you kill a program via Task Manager or otherwise, you may have an endless load when starting the game.
+
+To fix this, run the program again and close normally via X.  Or you can go to `C:/Windows/System32/drivers/etc/hosts` file and remove this line `127.0.0.1 masterdata-main.aws.blue-protocol.com`
