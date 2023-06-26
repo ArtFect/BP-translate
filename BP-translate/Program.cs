@@ -77,14 +77,11 @@ namespace BPtranslate {
         }
 
         public static int Main(string[] args) {
-            if (!File.ReadAllText(hostsFile).Contains(redirectEntry)) {
-                UpdateMasterDataRealIp();
-                AddRedirectToHosts();
-            } else {
+            if (File.ReadAllText(hostsFile).Contains(redirectEntry)) {
                 RemoveRedirectFromHosts();
-                UpdateMasterDataRealIp();
-                AddRedirectToHosts();
             }
+            UpdateMasterDataRealIp();
+            AddRedirectToHosts();
 
             handler = new ConsoleEventDelegate(ConsoleEventCallback);
             SetConsoleCtrlHandler(handler, true);
@@ -135,7 +132,6 @@ namespace BPtranslate {
                 RemoveRedirectFromHosts();
                 RemoveCertificate();
             }
-            Console.WriteLine(eventType);
             return false;
         }
         static ConsoleEventDelegate handler;
