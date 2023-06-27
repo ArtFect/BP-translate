@@ -1,6 +1,8 @@
 # BP-translate
 
-Partial translator for the Japanese Blue Protocol server. It only translates strings that are downloaded from the api (quests, items, mobs...)
+Partial translator for the Japanese Blue Protocol server. It only translates strings that are downloaded from the api (quests, items, mobs...)  
+
+So far it does not work if you use a proxy for Blue Protocol. VPN is fine
  
 <img src="https://i.imgur.com/PwC50La.png" alt= “” width="328" height="341">
 
