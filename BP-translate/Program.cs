@@ -102,10 +102,14 @@ namespace BPtranslate {
             //Check if the file already ends with a new line or we need to add it
             bool addNewLine = true;
             using (FileStream fs = new FileStream(hostsFile, FileMode.Open))
-            using (BinaryReader rd = new BinaryReader(fs)) {
-                fs.Position = fs.Length - 1;
-                int last = rd.Read();
-                if (last == 10) addNewLine = false;
+            if(fs.Length == 0) {
+                addNewLine = false;
+            } else {
+                using (BinaryReader rd = new BinaryReader(fs)) {
+                    fs.Position = fs.Length - 1;
+                    int last = rd.Read();
+                    if (last == 10) addNewLine = false;
+                }
             }
 
             string toAppend = (addNewLine ? Environment.NewLine + redirectEntry : redirectEntry);
