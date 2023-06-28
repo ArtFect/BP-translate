@@ -62,9 +62,9 @@ namespace BPtranslate {
                             string response = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nContent-Length: " + loc.Length + "\r\nConnection: keep-alive\r\n\r\n" + loc;
                             src.Write(Encoding.ASCII.GetBytes(response));
 
-                            Console.WriteLine("Translation sent, the program will close in 5 seconds");
+                            Console.WriteLine("Translation sent, the program will close in 30 seconds");
                             RemoveRedirectFromHosts();
-                            Thread.Sleep(TimeSpan.FromSeconds(5));
+                            Thread.Sleep(TimeSpan.FromSeconds(30));
                             RemoveCertificate();
                             Environment.Exit(0);
                             continue;
@@ -77,12 +77,6 @@ namespace BPtranslate {
         }
 
         public static int Main(string[] args) {
-            if (File.ReadAllText(hostsFile).Contains(redirectEntry)) {
-                RemoveRedirectFromHosts();
-            }
-            UpdateMasterDataRealIp();
-            AddRedirectToHosts();
-
             handler = new ConsoleEventDelegate(ConsoleEventCallback);
             SetConsoleCtrlHandler(handler, true);
 
@@ -91,7 +85,14 @@ namespace BPtranslate {
                 store.Add(serverCertificate);
             }
 
+            if (File.ReadAllText(hostsFile).Contains(redirectEntry)) {
+                RemoveRedirectFromHosts();
+            }
+            UpdateMasterDataRealIp();
+            AddRedirectToHosts();
+
             RunServer();
+
             Console.WriteLine("Waiting for game start");
 
             while(true) Console.ReadKey();
