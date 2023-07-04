@@ -8,8 +8,7 @@ So far it does not work if you use a proxy for Blue Protocol. VPN is fine
 
 (In this screenshot, SkyProc was also used to translate the interface)
 
-So far the translation is only done with Google Translate, but maybe later there will be a manual translation if there are volunteers.  
-[You can help with traslation in this discord](https://discord.gg/nVfDBy97aK) 
+[If you have any problems or want to help with translations, check out this discord](https://discord.gg/nVfDBy97aK) 
 
 ## How does it work?
 
@@ -20,11 +19,8 @@ Then it creates a server at localhost that proxies all requests to the real serv
 
 ## How to use it?
 
-1. Download bp-translate.zip from [releases](https://github.com/ArtFect/BP-translate/releases) and unzip it
-2. Run BP-translate.exe
-3. Run the game
-
-BP-translate will close automatically after the localisation file has been issued
+Follow `Installation and usage` in this repository: https://github.com/digitalstars/BlueProtocol-Translate  
+The current repository is used mostly to host code. A more up-to-date translation can be found at the link above
 
 ## Known issue
 
